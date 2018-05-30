@@ -1,0 +1,17 @@
+.coinsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin {
+  border: solid 1px black;
+  margin: 10px;
+  padding: 20px;
+  width: 15%;
+}
+
+.coin img {
+  text-align: center;
+}
