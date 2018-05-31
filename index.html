@@ -15,10 +15,10 @@
     </div>
 
     <div class="functionButton">
-        <button onclick="sortName()">Sort Name</button>
-        <button onclick="sortPrice()">Sort Price</button>
-        <button onclick="sortRank()">Sort Rank</button>
-        <input type="text" placeholder="Search">
+        <button onclick="assignEvent.sortName()">Sort Name</button>
+        <button onclick="assignEvent.sortPrice()">Sort Price</button>
+        <button onclick="assignEvent.sortRank()">Sort Rank</button>
+        <input type="text" placeholder="Search" onkeyup="assignEvent.filterCoin()" id="filterInput">
     </div>
 
     <div class="coinsContainer" id="coinsGoHere">
@@ -31,8 +31,10 @@
             <p>Change 7d</p>
         </div> -->
     </div>
-
-    <script src="./index.js"></script>
+    <!-- <div class="addMore">
+        <button class="loadMore" onclick="loadMore()" id="loadMore">Load More</button>
+    </div> -->
+    <script src="./backup.js"></script>
 </body>
 
 </html>

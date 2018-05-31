@@ -1,7 +1,10 @@
-const url = "https://api.coinmarketcap.com/v2/ticker/";
+let count = 0;
+let url = "https://api.coinmarketcap.com/v2/ticker/?start=" + count;
 let coins = [];
+let fetchDone = false;
+let arr = [];
 
-async function fetchAsync() {
+async function fetchAsync(url, coins) {
   // await response of fetch call
   let response = await fetch(url);
   // only proceed once promise is resolved
@@ -11,10 +14,26 @@ async function fetchAsync() {
   coins.forEach(coin => {
     renderCoin(coin);
   });
+  fetchDone = true;
 }
 
-fetchAsync();
+function a(b) {
+  b.push("a");
+}
+a(arr);
 
+fetchAsync(url, coins);
+console.log(coins);
+loadMore = () => {
+  count += 101;
+  url = "https://api.coinmarketcap.com/v2/ticker/?start=" + count;
+  console.log(url);
+  if (count <= 1999) {
+    fetchAsync(url, coins);
+  } else {
+    document.getElementById("loadMore").style.display = "none";
+  }
+};
 renderCoin = data => {
   const div = document.createElement("div");
   div.className = "coin";
